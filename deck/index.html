@@ -77,6 +77,18 @@ tr.hl td{background:#FDF3D7 !important;font-weight:500}
 .log div:before{content:"\2713";color:var(--gd);font-weight:800;margin-left:8px}
 .illus{font-size:14px;color:var(--muted);text-align:center}
 
+/* bio rows (slide 2): each line appears together with its logos */
+.bio{display:grid;grid-template-columns:1fr 690px;gap:22px 28px;align-items:center;flex:1;align-content:center}
+.bio .b{position:relative;padding-right:30px;font-size:24px;line-height:1.45}
+.bio .b:before{content:"";position:absolute;right:4px;top:14px;width:11px;height:11px;border-radius:50%;background:var(--g)}
+.bio .wide{grid-column:1 / -1}
+.bio .logos{display:flex;align-items:center;justify-content:center;gap:14px}
+.bio .logos img{border-radius:6px}
+/* section opener (slide 8): big cards on white */
+.opener .card{padding:26px 24px}
+.opener .card h4{font-size:34px;margin:6px 0 12px}
+.opener .card p{font-size:27px;line-height:1.5}
+.opener .ico{width:62px;height:62px;margin-bottom:8px}
 /* separator (slide 8) */
 .slide.sep{background:var(--gl)}
 .slide.sep h2{color:#fff;font-size:66px;-webkit-text-stroke:1px #1F1E1C;paint-order:stroke fill;text-shadow:0 1px 3px rgba(0,0,0,.3)}
@@ -177,29 +189,30 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
 <!-- 2 קצת עליי -->
 <section class="slide">
   <h2>קצת עליי</h2>
-  <ul class="dot" style="max-width:1100px;font-size:29px">
-    <li class="f" style="font-size:29px;margin:16px 0">איש חינוך עשרים שנה: מורה, מייסד ומנהל בית הספר "שורשים", וסגן מנהל מרכז פסג"ה תל אביב-יפו.</li>
-    <li class="f" style="font-size:29px;margin:16px 0">מאז 2023 עוסק רק בממשק שבין בינה מלאכותית לארגונים לומדים: חינוך, אקדמיה, ועסקים שעובדים עם <span class="r">סוכנים</span>.</li>
-    <li class="f" style="font-size:29px;margin:16px 0">מגיש את הפודקאסט "דיבורי בינה", מנהל את קהילת "בינה מלאכותית בחינוך ובאקדמיה" (כ-40 אלף חברים), וכתב עם פרופ' אמנון גלסנר את הספר "אהבת למידה וחדוות גילוי".</li>
-  </ul>
-  <div style="margin-top:auto;display:flex;align-items:flex-end;justify-content:space-between;gap:16px">
-    <img src="assets/bio-shorashim.webp" alt="בית הספר שורשים" style="height:115px">
-    <img src="assets/bio-pisga.png" alt="מרכז פסגה תל אביב-יפו" style="height:110px">
-    <img src="assets/bio-madaney.jpg" alt="מדעני העתיד" style="height:135px">
-    <img src="assets/bio-podcast.jpg" alt="הפודקאסט דיבורי בינה" style="height:150px">
-    <img src="assets/bio-community.png" alt="קהילת בינה מלאכותית בחינוך ובאקדמיה" style="height:150px">
-    <img src="assets/bio-book.png" alt="הספר אהבת למידה וחדוות גילוי" style="height:200px">
+  <div class="bio">
+    <p class="b f" id="b1">איש חינוך עשרים שנה: מורה, מייסד ומנהל בית הספר "שורשים", סגן מנהל מרכז פסג"ה תל אביב-יפו, ואחראי הפן החברתי-רגשי במדעני העתיד.</p>
+    <div class="logos" data-with="b1">
+      <img src="assets/bio-shorashim.webp" alt="בית הספר שורשים" style="height:145px">
+      <img src="assets/bio-pisga.png" alt="מרכז פסגה תל אביב-יפו" style="height:135px">
+      <img src="assets/bio-madaney.jpg" alt="מדעני העתיד" style="height:150px">
+    </div>
+    <p class="b f wide">מאז 2023 עוסק רק בממשק שבין בינה מלאכותית לארגונים לומדים: חינוך, אקדמיה, ועסקים שעובדים עם <span class="r">סוכנים</span>.</p>
+    <p class="b f" id="b3">מגיש את הפודקאסט "דיבורי בינה", מנהל את קהילת "בינה מלאכותית בחינוך ובאקדמיה" (כ-40 אלף חברים), וכתב עם פרופ' אמנון גלסנר את הספר "אהבת למידה וחדוות גילוי".</p>
+    <div class="logos" data-with="b3">
+      <img src="assets/bio-podcast.jpg" alt="הפודקאסט דיבורי בינה" style="height:170px">
+      <img src="assets/bio-community-fb.jpg" alt="קבוצת הפייסבוק בינה מלאכותית בחינוך ובאקדמיה" style="height:160px">
+      <img src="assets/bio-book.png" alt="הספר אהבת למידה וחדוות גילוי" style="height:195px">
+    </div>
   </div>
 </section>
 
 <!-- 3 עם מה יוצאים היום -->
 <section class="slide">
   <h2>עם מה יוצאים היום</h2>
-  <div class="cards big-cards" style="flex-wrap:wrap;flex:1;align-content:stretch">
-    <div class="card f" style="flex:1 1 45%"><h4>1. סוכן מול צ'אט</h4><p>להבין במה <span class="r">סוכן</span> שונה מצ'אט, ולמה זה משנה את העבודה.</p></div>
-    <div class="card f" style="flex:1 1 45%"><h4>2. להתמצא באפליקציה</h4><p>תיקייה, מודל, מאמץ והרשאות.</p></div>
-    <div class="card f" style="flex:1 1 45%"><h4>3. שליטה</h4><p>לדעת לעצור, לחזור אחורה ולשמור על המידע.</p></div>
-    <div class="card f" style="flex:1 1 45%"><h4>4. משימה אמיתית ראשונה</h4><p>שקלוד ביצע אצלכם/ן במחשב.</p></div>
+  <div class="cards big-cards" style="flex:1;align-items:stretch;max-height:330px">
+    <div class="card f"><h4>1. סוכן מול צ'אט</h4><p>להבין במה <span class="r">סוכן</span> שונה מצ'אט, ולמה זה משנה את העבודה.</p></div>
+    <div class="card f"><h4>2. להתמצא באפליקציה</h4><p>תיקייה, מודל, מאמץ והרשאות.</p></div>
+    <div class="card f"><h4>3. משימה אמיתית ראשונה</h4><p>שקלוד ביצע אצלכם/ן במחשב.</p></div>
   </div>
   <div class="f" style="margin-top:22px">
     <p class="small" style="margin-bottom:6px">חמשת החלקים של היום:</p>
@@ -214,7 +227,7 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
   <h2>לפני שמתחילים: בדיקת התקנה</h2>
   <div class="cards" style="flex:1;min-height:0;align-items:stretch">
     <div class="card f">
-      <h4>סקר בצ'אט: כתבו מספר אחד</h4>
+      <h4>סקר בצ'אט: כתבו בצ'אט את מספר הסעיף שמייצג את המצב שלכם</h4>
       <ol class="nums" style="margin-top:6px">
         <li style="font-size:23px">האפליקציה פתוחה, ואני רואה את הלשונית
 <span class="en">Code</span>
@@ -237,7 +250,6 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
     </div>
   </div>
   <div class="cards" style="margin-top:16px">
-    <div class="prompt f" style="flex:1"><span class="lb">בזמן הזה</span>הורידו את ערכת התרגול (הקישור בצ'אט) וחלצו אותה לשולחן העבודה.</div>
     <div class="prompt f" style="flex:1;border-right-color:var(--red)"><span class="lb" style="color:var(--red)">נתקעתם/ן?</span>כתבו בצ'אט מה אתם/ן רואים/ות על המסך. נפתור בהפסקה.</div>
   </div>
 </section>
@@ -284,9 +296,10 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
     <div class="tx">
       <p class="f" style="font-size:28px">סוכן מקבל <span class="g">מטרה</span>, ואז עובד בלולאה: מתכנן, פועל, בודק ומתקן.</p>
       <p class="f" style="font-size:28px;margin-top:14px">הוא חוזר על זה עד שהעבודה גמורה, או עד שהוא <span class="r">צריך אתכם/ן</span>.</p>
-      <p class="f" style="font-size:24px;margin-top:22px;color:var(--muted)">לפי אנתרופיק: סוכן פועל בלולאה שהוא מנהל בעצמו.</p>
-      <p class="small" style="margin-top:10px">מקור: אנתרופיק, 9.4.2026</p>
-      <p class="small en">Trustworthy agents in practice</p>
+      <div class="f" style="margin-top:22px">
+        <p style="font-size:24px;color:var(--muted)">לפי אנתרופיק: סוכן פועל בלולאה שהוא מנהל בעצמו.</p>
+        <p class="small" style="margin-top:6px">מתוך מאמר של אנתרופיק על סוכנים, אפריל 2026.</p>
+      </div>
     </div>
     <div class="loop">
       <div class="ring"></div>
@@ -338,15 +351,26 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
 </section>
 
 <!-- 8 היום: קלוד קוד -->
-<section class="slide sep">
-  <div class="logo-card"><img src="assets/logo.png" alt="הלוגו של תום הגלעדי"></div>
+<section class="slide opener">
   <div class="fill">
-    <h2>היום: קלוד קוד</h2>
-    <ul class="dot" style="max-width:820px">
-      <li class="f">אחד הסוכנים החזקים בשוק.</li>
-      <li class="f">נבנה במקור למתכנתים, והיום משמש הרבה מעבר לזה: בניית כלים, אוטומציה של עבודה חוזרת, ועבודה על מסמכים.</li>
-      <li class="f">נעבוד באפליקציה, בלי טרמינל.</li>
-    </ul>
+    <h2 style="font-size:72px;margin-bottom:34px">היום: <span class="r">קלוד קוד</span></h2>
+    <div class="cards big-cards" style="align-items:stretch;text-align:center">
+      <div class="card tint f">
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="#5E9A28" stroke-width="3"><path d="M24 5l5.6 11.6L42 18.3l-9 8.8 2.1 12.4L24 33.7l-11.1 5.8L15 27.1l-9-8.8 12.4-1.7z"/></svg>
+        <h4>אחד הסוכנים החזקים בשוק</h4>
+        <p>עובד ישירות על התיקיות והקבצים במחשב שלכם/ן.</p>
+      </div>
+      <div class="card tint f">
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="#5E9A28" stroke-width="3"><path d="M17 14L7 24l10 10M31 14l10 10-10 10M27 9l-6 30"/></svg>
+        <h4>נבנה במקור למתכנתים</h4>
+        <p>והיום משמש הרבה מעבר לזה: בניית כלים, אוטומציה של עבודה חוזרת, ועבודה על מסמכים.</p>
+      </div>
+      <div class="card tint f">
+        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="#5E9A28" stroke-width="3"><rect x="6" y="9" width="36" height="30" rx="4"/><path d="M6 17h36"/></svg>
+        <h4>נעבוד באפליקציה</h4>
+        <p>בלי טרמינל: הכל קורה בחלון אחד, עם כפתורים.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -436,47 +460,6 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
   <p class="small" style="margin-top:auto">המחירים בדולרים, לפני מע"מ, נכון ל-1.11.2026. מקור: דף המחירים ומרכז העזרה של קלוד.</p>
 </section>
 
-<!-- 12 המכסה -->
-<section class="slide">
-  <h2>המכסה, ומה שורף אותה</h2>
-  <div class="cards" style="flex:1;min-height:0;align-items:stretch">
-    <div style="flex:1.1;display:flex;flex-direction:column;gap:14px">
-      <div class="card f">
-        <h4>איך זה עובד</h4>
-        <p>חלון של <span class="r">חמש שעות</span> שמתחיל בהודעה הראשונה, ועוד מגבלה שבועית.</p>
-        <p style="margin-top:6px">הצ'אט וקלוד קוד חולקים את אותה מכסה.</p>
-      </div>
-      <div class="card f">
-        <h4>מה שורף מהר</h4>
-        <p>מודל חזק &middot; מאמץ גבוה &middot; שיחה ארוכה</p>
-      </div>
-      <div class="card red f">
-        <h4>שתי מלכודות עלות בפרו</h4>
-        <p>
-<span class="en">Fable 5.1</span>
-ו-
-<span class="en">Fast mode</span>
-עובדים רק על חשבון קרדיט בתשלום, גם כשנשארה מכסה.</p>
-      </div>
-    </div>
-    <div style="flex:1;display:flex;flex-direction:column;gap:14px">
-      <div class="card tint f">
-        <h4>ההמלצה להיום</h4>
-        <p style="font-size:24px">
-<span class="en">Opus 5.5</span>
-במאמץ
-<span class="en">Medium</span>
-        </p>
-      </div>
-      <div class="card f" style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px">
-        <h4>כמה נשאר?</h4>
-        <img src="assets/crop-bottom-right.png" class="shot" alt="השורה שמתחת לתיבת ההקלדה, עם טבעת השימוש" style="width:405px">
-        <p style="font-size:20px">לחצו על הטבעת שבשורה מתחת לתיבת ההקלדה.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- 13 מפת המסך -->
 <section class="slide tight">
   <div class="agenda"><span class="ag">מצ'אט לסוכן</span><span class="ag">מה זה קלוד קוד</span><span class="ag on">הממשק והשליטה</span><span class="ag">תיקיות ופרטיות</span><span class="ag">תרגול</span></div>
@@ -525,7 +508,6 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
         <h4 class="en">Code</h4>
         <p>קלוד קוד: סוכן שעובד בתוך תיקיית פרויקט. קורא, יוצר ועורך קבצים, מריץ פקודות ובונה כלים. <span class="g">זו הלשונית שלנו היום.</span></p>
       </div>
-      <p class="f" style="margin-top:16px;font-size:24px">למה בלשונית הקוד? רואים <span class="r">כל פעולה</span>, שולטים בהרשאות, והפרויקט זוכר את ההוראות שלו.</p>
     </div>
     <div class="im"><img src="assets/crop-sidebar.png" class="shot" alt="ראש סרגל הצד: הלשוניות Claude ו-Code, ומתחתן שיחה חדשה, חיפוש ופריטים נוספים" style="width:420px"></div>
   </div>
@@ -667,11 +649,11 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
         <tbody>
           <tr class="f">
             <td class="en">Manual</td>
-            <td>שואל לפני כל עריכה ולפני כל פקודה.</td>
+            <td>שואל אתכם/ן לפני כל שינוי בקובץ, ולפני כל פקודה.</td>
           </tr>
-          <tr class="f">
+          <tr class="f" id="pm2">
             <td class="en">Accept edits</td>
-            <td>עורך קבצים לבד, ושואל לפני פקודות.</td>
+            <td>יוצר ומשנה קבצים בלי לשאול. אבל לפני פקודה במחשב, כמו העברת קבצים או התקנת תוכנה, הוא עוצר ושואל.</td>
           </tr>
           <tr class="f">
             <td class="en">Plan</td>
@@ -687,6 +669,7 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
           </tr>
         </tbody>
       </table>
+      <p class="small" data-with="pm2" style="margin-top:8px;font-size:19px">"פקודה" היא פעולה שקלוד מריץ במחשב עצמו, מעבר לכתיבה בתוך קובץ: למשל להעביר קבצים בין תיקיות, להתקין תוכנה או להריץ סקריפט.</p>
     </div>
     <div class="im" style="flex:0 0 380px;gap:16px">
       <img src="assets/crop-bottom-right.png" class="shot" alt="כפתור מצב ההרשאה, שמראה Auto" style="width:370px">
@@ -728,7 +711,6 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
   <div class="warnbox f" style="margin-top:24px;font-size:27px">
     <b>מה לא חוזר:</b> קבצים ששונו רק בהרצת פקודה, כמו העברה בין תיקיות. וגם פעולות בחוץ, כמו מייל שנשלח.
   </div>
-  <p class="line-end f" style="font-size:34px;margin-top:26px">לכן, במשהו חשוב: <span class="r">עבדו על עותק</span>.</p>
   <p class="small" style="margin-top:auto">מקור: עמוד נקודות השמירה בתיעוד הרשמי, סעיף המגבלות.</p>
 </section>
 
@@ -736,6 +718,7 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
 <section class="slide">
   <h2>תרגיל חימום: מה יש בערכה?</h2>
   <ol class="nums">
+    <li class="f" style="font-size:24px">הורידו את ערכת התרגול (הקישור בצ'אט) וחלצו אותה לשולחן העבודה.</li>
     <li class="f" style="font-size:24px">פתחו שיחה חדשה על תיקיית ערכת התרגול.</li>
     <li class="f" style="font-size:24px">הדביקו מהצ'אט:</li>
   </ol>
@@ -906,12 +889,12 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
     <div class="card f"><h4>גבולות</h4><p>מה לא לשנות ובמה לא לגעת.</p></div>
     <div class="card f"><h4>סיום</h4><p>איך נדע שזה מוכן.</p></div>
   </div>
-  <div class="prompt f" style="margin-top:16px;font-size:22px"><span class="lb">דוגמה</span>"המטרה: דף שאלות נפוצות לקורס. הקבצים: השאלות מהפורום והמידע על הקורס. אל תמציא תשובות. אדע שזה מוכן כשלכל שאלה יש תשובה מהחומר, או סימון שאין. לפני שאתה מתחיל, שאל אותי שאלות."</div>
+  <div class="prompt f" style="margin-top:16px;font-size:22px"><span class="lb">דוגמה</span>"אני רוצה שניצור דף שאלות נפוצות לקורס. הקבצים שרלוונטיים: השאלות מהפורום והמידע על הקורס. אל תמציא תשובות. תדע שזה מוכן כשלכל שאלה יש תשובה מהחומר, או סימון שאין. לפני שאתה מתחיל, שאל אותי שאלות."</div>
   <ul class="dot" style="margin-top:10px">
     <li class="f" style="font-size:23px">התחילו במצב
 <span class="en">Plan</span>
       , ובקשו שישאל שאלות לפני שהוא מתחיל.</li>
-    <li class="f" style="font-size:23px">ובסוף: <span class="r">בדקו</span>. סוכן טועה בביטחון מלא.</li>
+    <li class="f" style="font-size:23px">ובסוף: <span class="r">בדקו</span>. גם סוכן עלול לטעות (בביטחון מלא).</li>
   </ul>
 </section>
 
