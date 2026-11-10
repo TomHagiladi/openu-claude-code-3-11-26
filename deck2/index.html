@@ -159,6 +159,8 @@ ol.nums.cols li{break-inside:avoid;font-size:26px;margin:0 0 16px}
 #lnkToast a{color:#9ED174;font-weight:700}
 #lnkToast .x{background:none;border:1px solid #888;color:#fff;border-radius:14px;padding:3px 14px;font-family:inherit;font-size:15px;cursor:pointer}
 
+.keywarn{display:flex;align-items:center;justify-content:center;gap:16px;margin-top:10px;background:#FBF1F1;border:2.5px solid var(--red);border-radius:12px;padding:10px 20px;font-size:32px;font-weight:800;color:var(--ink);line-height:1.3}
+.keywarn svg{width:46px;height:46px;flex:0 0 46px}
 /* ================= MECHANICS (from the deck engine) ================= */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Arial,sans-serif}
@@ -599,8 +601,11 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
       </ul>
     </div>
   </div>
-  <p class="line-end f" style="font-size:24px;margin-top:12px">אותו שירות, שתי דלתות: את האבספוט אני שואל בשיחה, <span class="r">והסקריפט הלילי כותב אליו לבד.</span></p>
-  <p class="f" style="text-align:center;font-size:21px;margin-top:6px">לכם/ן: מתחילים במחברים. ומפתח של <span class="en">API</span> הוא כמו סיסמה: לא מדביקים אותו בצ'אט.</p>
+  <p class="f" style="text-align:center;font-size:21px;margin-top:10px">אותו שירות, שתי דלתות: את האבספוט אני שואל בשיחה, והסקריפט הלילי כותב אליו לבד. <b>לכם/ן: מתחילים במחברים.</b></p>
+  <div class="keywarn f">
+    <svg viewBox="0 0 48 48" fill="none" stroke="#AF242A" stroke-width="3.5" aria-hidden="true"><circle cx="16" cy="24" r="9"/><path d="M25 24h19M37 24v8M43 24v6"/></svg>
+    <span>מפתח <span class="en">API</span> הוא כמו סיסמה: <span class="r">לא מדביקים אותו בצ'אט!</span></span>
+  </div>
 </section>
 
 <!-- 16 התנסות: מחברים -->
