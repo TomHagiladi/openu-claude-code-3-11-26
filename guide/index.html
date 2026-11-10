@@ -41,6 +41,7 @@ li{margin:8px 0}
 .dl:hover{background:#2f5414}
 .ex{border:1.5px solid var(--line);border-right:7px solid var(--g);border-radius:12px;padding:6px 22px 16px;margin:18px 0;background:#fff}
 .ex h3{margin-top:14px}
+.ex[id],section[id]{scroll-margin-top:84px}
 .meta{color:var(--muted);font-size:19px;margin:4px 0}
 .copy{background:var(--gt);border:1.5px solid var(--line);border-radius:10px;padding:14px 18px;margin:12px 0}
 .copy label{display:block;font-size:17px;font-weight:700;color:var(--gdd);margin-bottom:8px}
@@ -107,10 +108,46 @@ footer{background:var(--gt);border-top:3px solid var(--g);padding:26px 0 44px;ma
 <section id="s2" aria-labelledby="h-s2">
   <h2 id="h-s2">מפגש 2: ההתנסויות</h2>
   <p>לפי הסדר במצגת. כל התנסות לוקחת כמה דקות. גם כאן הכל הצעות, ואפשר לערוך כל פרומפט לפני ההעתקה.</p>
-  <p class="warn"><b>שימו לב:</b> היום עובדים גם על קבצים מהעבודה. לא מכניסים שמות סטודנטים עם ציונים, מספרי זהות, מידע רפואי או אישי, סיסמאות, או מבחנים חסויים.</p>
+  <p class="warn"><b>שימו לב:</b> מידע אישי של אחרים לא מכניסים: שמות סטודנטים עם ציונים, מספרי זהות, מידע רפואי או אישי, ומבחנים חסויים. מידע אישי שלכם/ן: הבחירה שלכם/ן, ודעו שיש בזה סיכון אבטחה.</p>
 
-  <div class="ex">
-    <h3>1. פקודות סלאש</h3>
+  <div class="ex" id="s2-plan">
+    <h3>1. מצב התכנון, והתוכנית כדף</h3>
+    <p>עוברים למצב <span class="ltr">Plan</span> בשורה שמתחת לתיבת ההקלדה, ומבקשים משהו קטן:</p>
+    <div class="copy">
+      <label for="t-s2-0a">אפשר לערוך כאן לפני ההעתקה</label>
+<textarea id="t-s2-0a" rows="2">תכנן לי סילבוס לקורס שלי בנושא [הנושא], לסמסטר אחד, בקובץ וורד. בינתיים רק תוכנית.</textarea>
+      <div class="btns"><button type="button" class="cbtn" data-copy="t-s2-0a">העתק</button><button type="button" class="rbtn" data-reset="t-s2-0a">החזרת הנוסח המקורי</button></div>
+    </div>
+    <p>התוכנית מופיעה בחלונית בצד, מיושרת לשמאל. עכשיו כותבים:</p>
+    <div class="copy">
+      <label for="t-s2-0b">אפשר לערוך כאן לפני ההעתקה</label>
+<textarea id="t-s2-0b" rows="2">הצג את התוכנית כדף אינטרנט בעברית, מימין לשמאל, ופתח אותו בדפדפן. אחר כך עצור, וחכה שאכתוב לך להתחיל.</textarea>
+      <div class="btns"><button type="button" class="cbtn" data-copy="t-s2-0b">העתק</button><button type="button" class="rbtn" data-reset="t-s2-0b">החזרת הנוסח המקורי</button></div>
+    </div>
+    <p>קלוד יבקש לצאת ממצב התכנון, כי במצב הזה הוא לא יוצר קבצים. מאשרים.</p>
+    <p class="ok">הצלחתם/ן אם: התוכנית נפתחה כדף בדפדפן, מימין לשמאל, וקלוד מחכה.</p>
+  </div>
+
+  <div class="ex" id="s2-skill">
+    <h3>2. בונים סקיל</h3>
+    <p>כדי לא לבקש את הדף בכל פעם, הופכים את הבקשה לסקיל:</p>
+    <div class="copy">
+      <label for="t-s2-8b">אפשר לערוך כאן לפני ההעתקה</label>
+<textarea id="t-s2-8b" rows="3">צור לי סקיל בשם plan-html שעובד כך: כשאני מבקש תוכנית, חקור בלי לשנות כלום, כתוב את התוכנית כדף אינטרנט בעברית מימין לשמאל, פתח אותו בדפדפן, ועצור עד שאאשר.</textarea>
+      <div class="btns"><button type="button" class="cbtn" data-copy="t-s2-8b">העתק</button><button type="button" class="rbtn" data-reset="t-s2-8b">החזרת הנוסח המקורי</button></div>
+    </div>
+    <p>ואז פותחים שיחה חדשה באותה תיקייה, בלי מצב התכנון, מקלידים לוכסן ואת שם הסקיל, ומבקשים משהו קטן לתכנן.</p>
+    <p>חלופה, משוב למטלה:</p>
+    <div class="copy">
+      <label for="t-s2-8a">אפשר לערוך כאן לפני ההעתקה</label>
+<textarea id="t-s2-8a" rows="3">צור לי סקיל בשם student-feedback שעובד כך: כשאני מדביק תשובה של סטודנט למטלה, כתוב משוב במבנה קבוע: שתי נקודות חוזק, נקודה אחת לשיפור, ומשפט עידוד. בטון חם ומקצועי, עד 80 מילים.</textarea>
+      <div class="btns"><button type="button" class="cbtn" data-copy="t-s2-8a">העתק</button><button type="button" class="rbtn" data-reset="t-s2-8a">החזרת הנוסח המקורי</button></div>
+    </div>
+    <p class="ok">הצלחתם/ן אם: בשיחה החדשה התוכנית נפתחת כדף, וקלוד מחכה לאישור.</p>
+  </div>
+
+  <div class="ex" id="s2-slash">
+    <h3>3. פקודות סלאש</h3>
     <p>מקלידים לוכסן בתיבה, ונפתחת רשימת הפקודות. בשיחה שכבר עבדתם/ן בה, הקלידו את הפקודה הזו, וראו מה תופס מקום בחלון ההקשר:</p>
     <p><span class="ltr">/context</span></p>
     <p>ואז, בזמן שקלוד עובד על משימה, שאלו שאלה צדדית:</p>
@@ -122,8 +159,8 @@ footer{background:var(--gt);border-top:3px solid var(--g);padding:26px 0 44px;ma
     <p class="ok">הצלחתם/ן אם: התשובה לשאלה הצדדית נפתחת בצד, והמשימה ממשיכה לרוץ.</p>
   </div>
 
-  <div class="ex">
-    <h3>2. תמונות וקובץ מסוים</h3>
+  <div class="ex" id="s2-images">
+    <h3>4. תמונות וקובץ מסוים</h3>
     <p>צלמו מסך של טבלה או גרף מתוך מאמר או אתר, הדביקו בתיבה, ושלחו עם הבקשה:</p>
     <div class="copy">
       <label for="t-s2-2a">אפשר לערוך כאן לפני ההעתקה</label>
@@ -139,8 +176,8 @@ footer{background:var(--gt);border-top:3px solid var(--g);padding:26px 0 44px;ma
     <p class="ok">הצלחתם/ן אם: הטבלה תואמת את התמונה, והסיכום הוא של הקובץ שבחרתם/ן.</p>
   </div>
 
-  <div class="ex">
-    <h3>3. שתי שיחות במקביל</h3>
+  <div class="ex" id="s2-parallel">
+    <h3>5. שתי שיחות במקביל</h3>
     <p>בשיחה אחת, משימה ארוכה:</p>
     <div class="copy">
       <label for="t-s2-3">אפשר לערוך כאן לפני ההעתקה</label>
@@ -152,8 +189,8 @@ footer{background:var(--gt);border-top:3px solid var(--g);padding:26px 0 44px;ma
     <p class="warn"><b>כלל:</b> לא נותנים לשתי שיחות לערוך את אותו קובץ.</p>
   </div>
 
-  <div class="ex">
-    <h3>4. מחברים</h3>
+  <div class="ex" id="s2-connectors">
+    <h3>6. מחברים</h3>
     <p>מחברים דרך הפלוס שליד תיבת ההקלדה, ואז:</p>
     <p><span class="ltr">Add connectors</span></p>
     <p>חברו את היומן או את הדרייב, ושאלו:</p>
@@ -172,8 +209,8 @@ footer{background:var(--gt);border-top:3px solid var(--g);padding:26px 0 44px;ma
     <p class="tip"><b>כלל:</b> מחבר למייל פירושו שקלוד קורא את המייל שלכם/ן. מבקשים טיוטה, לא שליחה.</p>
   </div>
 
-  <div class="ex">
-    <h3>5. קבצי אופיס</h3>
+  <div class="ex" id="s2-office">
+    <h3>7. קבצי אופיס</h3>
     <div class="copy">
       <label for="t-s2-5a">אפשר לערוך כאן לפני ההעתקה</label>
 <textarea id="t-s2-5a" rows="3">צור בתיקייה קובץ אקסל עם ציונים מומצאים של 20 סטודנטים בשלוש מטלות. הוסף עמודת ממוצע, צבע באדום כל ציון מתחת ל-60, והוסף גרף של התפלגות הממוצעים. ואז פתח את הקובץ.</textarea>
@@ -195,8 +232,8 @@ footer{background:var(--gt);border-top:3px solid var(--g);padding:26px 0 44px;ma
     <p class="tip"><b>לדעת:</b> התוספים בתוך וורד ואקסל עובדים רק עם מנוי של מיקרוסופט 365. יצירה ועריכה של קבצים מהתיקייה עובדות אצל כולם.</p>
   </div>
 
-  <div class="ex">
-    <h3>6. התוסף לכרום</h3>
+  <div class="ex" id="s2-chrome">
+    <h3>8. התוסף לכרום</h3>
     <p>קודם מתקינים את התוסף של קלוד מחנות התוספים של כרום, ומתחברים באותו חשבון.</p>
     <div class="copy">
       <label for="t-s2-6a">אפשר לערוך כאן לפני ההעתקה</label>
@@ -213,8 +250,8 @@ footer{background:var(--gt);border-top:3px solid var(--g);padding:26px 0 44px;ma
     <p class="warn"><b>הוא פועל בשמכם/ן.</b> מאשרים כל שליחה, ולא נותנים לו לגלוש במערכות עם מידע על סטודנטים.</p>
   </div>
 
-  <div class="ex">
-    <h3>7. ממשיכים מהטלפון</h3>
+  <div class="ex" id="s2-phone">
+    <h3>9. ממשיכים מהטלפון</h3>
     <p>מפעילים את המתג של השליטה מרחוק בתוך השיחה. בטלפון: מתקינים את אפליקציית קלוד, מתחברים באותו חשבון, ומוצאים את השיחה. משם שולחים:</p>
     <div class="copy">
       <label for="t-s2-7">אפשר לערוך כאן לפני ההעתקה</label>
@@ -223,23 +260,6 @@ footer{background:var(--gt);border-top:3px solid var(--g);padding:26px 0 44px;ma
     </div>
     <p class="ok">הצלחתם/ן אם: התשובה מופיעה גם בטלפון וגם במחשב.</p>
     <p class="tip"><b>לדעת:</b> העבודה רצה על המחשב. האפליקציה צריכה להישאר פתוחה, והמחשב דלוק ומחובר לרשת.</p>
-  </div>
-
-  <div class="ex">
-    <h3>8. בונים סקיל</h3>
-    <div class="copy">
-      <label for="t-s2-8a">אפשר לערוך כאן לפני ההעתקה</label>
-<textarea id="t-s2-8a" rows="3">צור לי סקיל בשם student-feedback שעובד כך: כשאני מדביק תשובה של סטודנט למטלה, כתוב משוב במבנה קבוע: שתי נקודות חוזק, נקודה אחת לשיפור, ומשפט עידוד. בטון חם ומקצועי, עד 80 מילים.</textarea>
-      <div class="btns"><button type="button" class="cbtn" data-copy="t-s2-8a">העתק</button><button type="button" class="rbtn" data-reset="t-s2-8a">החזרת הנוסח המקורי</button></div>
-    </div>
-    <p>ואז פותחים שיחה חדשה, מקלידים לוכסן ואת שם הסקיל, ומדביקים תשובה מומצאת של סטודנט.</p>
-    <p>חלופה, הסקיל של התוכנית:</p>
-    <div class="copy">
-      <label for="t-s2-8b">אפשר לערוך כאן לפני ההעתקה</label>
-<textarea id="t-s2-8b" rows="3">צור לי סקיל בשם plan-html שעובד כך: כשאני מבקש תוכנית, חקור בלי לשנות כלום, כתוב את התוכנית כדף אינטרנט בעברית מימין לשמאל, פתח אותו בדפדפן, ועצור עד שאאשר.</textarea>
-      <div class="btns"><button type="button" class="cbtn" data-copy="t-s2-8b">העתק</button><button type="button" class="rbtn" data-reset="t-s2-8b">החזרת הנוסח המקורי</button></div>
-    </div>
-    <p class="ok">הצלחתם/ן אם: בשיחה החדשה המשוב יוצא במבנה שהגדרתם/ן.</p>
   </div>
 </section>
 

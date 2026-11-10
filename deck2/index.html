@@ -132,6 +132,33 @@ ol.nums li:before{content:counter(n);position:absolute;right:0;top:3px;width:38p
 .vs .card.hk ul.dot li:before{background:var(--red)}
 .fn{display:block;font-size:14px;color:var(--muted);font-family:Consolas,'Courier New',monospace;direction:ltr;text-align:right;margin-top:-2px}
 
+/* poll cards centred */
+.card.ctr{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+/* recap in two columns */
+ol.nums.cols{columns:2;column-gap:56px;margin-top:4px}
+ol.nums.cols li{break-inside:avoid;font-size:26px;margin:0 0 16px}
+/* security, three verdicts */
+.sec3{display:flex;gap:18px;align-items:stretch;margin-top:6px}
+.sec3 .card{padding:18px 20px}
+.sec3 .card h4{font-size:29px;margin-bottom:0}
+.sec3 .verdict{font-size:27px;font-weight:800;margin-bottom:8px}
+.sec3 .card p{font-size:23px}
+.sec3 .card ul.dot li{font-size:23px;margin:6px 0}
+.sec3 .card ul.dot li:before{background:var(--red);top:15px}
+.sec3 .ico{margin:0 0 8px}
+.card.amb{background:#FDF6E8;border:1.5px solid #F0DDB5;border-top:6px solid #E0A030}
+/* copy-link buttons next to every practice QR */
+.lnk{font-family:inherit;font-size:16px;font-weight:700;color:var(--gdd);background:#fff;border:1.5px solid var(--g);border-radius:20px;padding:5px 14px;cursor:pointer;display:inline-flex;align-items:center;gap:6px;line-height:1.3}
+.lnk:hover{background:var(--gp)}
+.lnk svg{width:16px;height:16px;flex:0 0 16px}
+#lnkToast{position:fixed;bottom:28px;left:50%;transform:translate(-50%,20px);background:#2E2D2A;color:#fff;border-radius:12px;padding:14px 18px;box-shadow:0 10px 30px rgba(0,0,0,.45);z-index:20;width:min(640px,92vw);opacity:0;pointer-events:none;transition:opacity .2s ease,transform .2s ease;font-family:'Heebo',Arial,sans-serif}
+#lnkToast.on{opacity:1;pointer-events:auto;transform:translate(-50%,0)}
+#lnkToast .msg{font-size:18px;font-weight:700;line-height:1.4;margin-bottom:8px}
+#lnkToast input{width:100%;font-size:15px;padding:7px 10px;border-radius:6px;border:0;font-family:Consolas,'Courier New',monospace;direction:ltr}
+#lnkToast .row{display:flex;justify-content:space-between;align-items:center;margin-top:10px;font-size:16px}
+#lnkToast a{color:#9ED174;font-weight:700}
+#lnkToast .x{background:none;border:1px solid #888;color:#fff;border-radius:14px;padding:3px 14px;font-family:inherit;font-size:15px;cursor:pointer}
+
 /* ================= MECHANICS (from the deck engine) ================= */
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Arial,sans-serif}
@@ -167,76 +194,174 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
   </div>
 </section>
 
+
 <!-- 2 מה נעשה היום -->
 <section class="slide">
   <h2>מה נעשה היום</h2>
-  <div class="fill">
-    <ol class="nums">
-      <li class="f" style="font-size:34px;margin:14px 0">פתיחה וחזרה</li>
-      <li class="f" style="font-size:34px;margin:14px 0">מרעיון לבקשה</li>
-      <li class="f" style="font-size:34px;margin:14px 0">בתוך האפליקציה</li>
-      <li class="f" style="font-size:34px;margin:14px 0">קלוד מחוץ לאפליקציה</li>
-      <li class="f" style="font-size:34px;margin:14px 0">סקילים וסיום</li>
-    </ol>
+  <div style="display:flex;gap:24px;align-items:center;flex:1;min-height:0">
+    <div style="flex:1;min-width:0">
+      <ol class="nums">
+        <li class="f" style="font-size:34px;margin:18px 0">פתיחה וחזרה</li>
+        <li class="f" style="font-size:34px;margin:18px 0">בקשה, תוכנית וסקיל</li>
+        <li class="f" style="font-size:34px;margin:18px 0">בתוך האפליקציה</li>
+        <li class="f" style="font-size:34px;margin:18px 0">קלוד מחוץ לאפליקציה</li>
+        <li class="f" style="font-size:34px;margin:18px 0">שאלות וסיום</li>
+      </ol>
+    </div>
+    <div style="flex:0 0 560px;display:flex;justify-content:center">
+    <svg viewBox="0 0 560 470" width="540" role="img" aria-label="איור: מחשב נייד עם שיחה ותוכנית, ומסביבו טלפון, דפדפן, סקיל, יומן, גיליון ותיקייה">
+      <ellipse cx="280" cy="245" rx="262" ry="220" fill="#EDF5E4"/>
+      <g stroke="#9ED174" stroke-width="4" stroke-dasharray="8 8" fill="none"><path d="M280 235L78 160M280 235L475 100M280 235L280 70M280 235L80 385M280 235L480 385"/></g>
+      <rect x="35" y="95" width="82" height="132" rx="16" fill="#4A4845"/>
+      <rect x="43" y="108" width="66" height="100" rx="6" fill="#fff"/>
+      <rect x="57" y="118" width="46" height="14" rx="7" fill="#EDF5E4"/>
+      <rect x="49" y="140" width="46" height="14" rx="7" fill="#F2F2EF"/>
+      <rect x="63" y="162" width="40" height="14" rx="7" fill="#EDF5E4"/>
+      <circle cx="76" cy="217" r="4" fill="#7A7874"/>
+      <rect x="410" y="55" width="132" height="96" rx="10" fill="#fff" stroke="#DADADA" stroke-width="2"/>
+      <path d="M411 65a9 9 0 0 1 9-9h112a9 9 0 0 1 9 9v12H411z" fill="#F4F4F2"/>
+      <circle cx="424" cy="67" r="3.5" fill="#AF242A"/><circle cx="435" cy="67" r="3.5" fill="#E0A030"/><circle cx="446" cy="67" r="3.5" fill="#75B743"/>
+      <rect x="440" y="88" width="88" height="8" rx="4" fill="#9ED174"/>
+      <rect x="422" y="104" width="106" height="6" rx="3" fill="#E2E7DB"/>
+      <rect x="432" y="116" width="96" height="6" rx="3" fill="#E2E7DB"/>
+      <rect x="452" y="128" width="76" height="6" rx="3" fill="#E2E7DB"/>
+      <path d="M482 110v24l6-6 5 10 5-2.5-5-10h8.5z" fill="#AF242A"/>
+      <rect x="240" y="16" width="82" height="64" rx="10" fill="#fff" stroke="#75B743" stroke-width="3"/>
+      <path d="M252 16v22l7-5 7 5V16z" fill="#AF242A"/>
+      <rect x="272" y="30" width="40" height="7" rx="3.5" fill="#9ED174"/>
+      <rect x="252" y="50" width="60" height="5" rx="2.5" fill="#E2E7DB"/>
+      <rect x="262" y="61" width="50" height="5" rx="2.5" fill="#E2E7DB"/>
+      <rect x="30" y="340" width="102" height="92" rx="10" fill="#fff" stroke="#DADADA" stroke-width="2"/>
+      <path d="M31 350a9 9 0 0 1 9-9h82a9 9 0 0 1 9 9v14H31z" fill="#AF242A"/>
+      <rect x="52" y="331" width="7" height="18" rx="3.5" fill="#4A4845"/><rect x="103" y="331" width="7" height="18" rx="3.5" fill="#4A4845"/>
+      <g fill="#E2E7DB"><circle cx="49" cy="382" r="5.5"/><circle cx="70" cy="382" r="5.5"/><circle cx="91" cy="382" r="5.5"/><circle cx="112" cy="382" r="5.5"/><circle cx="49" cy="401" r="5.5"/><circle cx="70" cy="401" r="5.5"/><circle cx="112" cy="401" r="5.5"/><circle cx="49" cy="420" r="5.5"/><circle cx="70" cy="420" r="5.5"/><circle cx="91" cy="420" r="5.5"/></g>
+      <circle cx="91" cy="401" r="7" fill="#75B743"/>
+      <rect x="426" y="340" width="112" height="92" rx="8" fill="#fff" stroke="#DADADA" stroke-width="2"/>
+      <path d="M427 348a7 7 0 0 1 7-7h97a7 7 0 0 1 7 7v12H427z" fill="#5E9A28"/>
+      <rect x="464" y="397" width="36" height="17" fill="#F6D9DA"/>
+      <g stroke="#E2E7DB" stroke-width="2"><path d="M463 360v71M501 360v71M427 378h110M427 396h110M427 414h110"/></g>
+      <rect x="140" y="128" width="280" height="182" rx="14" fill="#3F6E1C"/>
+      <rect x="153" y="141" width="254" height="156" rx="6" fill="#fff"/>
+      <rect x="285" y="153" width="110" height="24" rx="12" fill="#EDF5E4"/>
+      <rect x="297" y="162" width="86" height="6" rx="3" fill="#9ED174"/>
+      <rect x="165" y="186" width="170" height="24" rx="12" fill="#F2F2EF"/>
+      <rect x="177" y="195" width="146" height="6" rx="3" fill="#C9C9C4"/>
+      <rect x="165" y="218" width="230" height="54" rx="8" fill="#fff" stroke="#E2E7DB" stroke-width="2"/>
+      <rect x="371" y="227" width="13" height="13" rx="3" fill="#75B743"/>
+      <path d="M374 233.5l3 3 5-5.5" stroke="#fff" stroke-width="2" fill="none"/>
+      <rect x="233" y="230.5" width="130" height="6" rx="3" fill="#C9C9C4"/>
+      <rect x="371" y="249" width="13" height="13" rx="3" fill="none" stroke="#75B743" stroke-width="2"/>
+      <rect x="263" y="252.5" width="100" height="6" rx="3" fill="#C9C9C4"/>
+      <rect x="165" y="279" width="230" height="12" rx="6" fill="#F4F4F2" stroke="#DADADA"/>
+      <path d="M110 310h340l22 22a8 8 0 0 1-6 13H94a8 8 0 0 1-6-13z" fill="#5E9A28"/>
+      <rect x="250" y="312" width="60" height="7" rx="3.5" fill="#3F6E1C"/>
+      <path d="M226 378h34l10 10h56a8 8 0 0 1 8 8v44a8 8 0 0 1-8 8H226a8 8 0 0 1-8-8v-54a8 8 0 0 1 8-8z" fill="#9ED174"/>
+      <path d="M218 402h116v38a8 8 0 0 1-8 8H226a8 8 0 0 1-8-8z" fill="#75B743"/>
+      <g fill="#AF242A"><path d="M190 80l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/><path d="M42 262l2.4 5.6 5.6 2.4-5.6 2.4-2.4 5.6-2.4-5.6-5.6-2.4 5.6-2.4z"/></g>
+      <g fill="#75B743"><path d="M382 78l2.4 5.6 5.6 2.4-5.6 2.4-2.4 5.6-2.4-5.6-5.6-2.4 5.6-2.4z"/><path d="M380 432l3 7 7 3-7 3-3 7-3-7-7-3 7-3z"/></g>
+      <path d="M528 236l3 7 7 3-7 3-3 7-3-7-7-3 7-3z" fill="#9ED174"/>
+    </svg>
+    </div>
   </div>
-  <p class="line-end f" style="font-size:40px">מכירים, <span class="r">ומיד מנסים.</span></p>
 </section>
 
 <!-- 3 סקר -->
 <section class="slide">
-  <div class="agenda"><span class="ag on">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
+  <div class="agenda"><span class="ag on">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
   <h2>מה ניסיתם/ן השבוע?</h2>
-  <p style="font-size:28px">כתבו בצ'אט מספר אחד:</p>
+  <p style="font-size:28px">כתבו בצ'אט:</p>
   <div class="cards big-cards" style="margin-top:16px;align-items:stretch;flex:1;max-height:300px">
-    <div class="card grt f" style="text-align:center"><h4 style="font-size:70px;color:var(--gd)">1</h4><p>עבדתי עם קלוד קוד על משהו משלי</p></div>
-    <div class="card grt f" style="text-align:center"><h4 style="font-size:70px;color:var(--gd)">2</h4><p>ניסיתי ונתקעתי</p></div>
-    <div class="card grt f" style="text-align:center"><h4 style="font-size:70px;color:var(--gd)">3</h4><p>לא הספקתי</p></div>
+    <div class="card grt ctr f"><h4 style="font-size:70px;color:var(--gd)">1</h4><p>עבדתי עם קלוד קוד על משהו משלי</p></div>
+    <div class="card grt ctr f"><h4 style="font-size:70px;color:var(--gd)">2</h4><p>ניסיתי ונתקעתי</p></div>
+    <div class="card grt ctr f"><h4 style="font-size:70px;color:var(--gd)">3</h4><p>לא הספקתי</p></div>
   </div>
   <p class="line-end f">ומי שכתב/ה 1 או 2: <span class="r">משפט אחד</span>, על מה.</p>
 </section>
 
+
 <!-- 4 חזרה -->
-<section class="slide sep">
-  <div class="logo-card"><img src="../deck/assets/logo.png" alt="הלוגו של תום הגלעדי"></div>
+<section class="slide">
+  <div class="agenda"><span class="ag on">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
   <h2>חזרה קצרה על מה שלמדנו במפגש הקודם</h2>
+  <div class="fill">
+    <ol class="nums cols">
+      <li class="f">צ'אט מסביר, סוכן עושה</li>
+      <li class="f">הסוכנים בשוק</li>
+      <li class="f">מה זה קלוד קוד, ואיך הוא בנוי</li>
+      <li class="f">מסלולי המנוי</li>
+      <li class="f">מפת המסך ושתי הלשוניות</li>
+      <li class="f">שיחה חדשה ובחירת תיקייה</li>
+      <li class="f">בחירת מודל ורמת מאמץ</li>
+      <li class="f">מונה ההקשר וטבעת השימוש</li>
+      <li class="f">צירוף קבצים</li>
+      <li class="f">מצבי ההרשאה</li>
+      <li class="f">עוצרים וחוזרים אחורה</li>
+      <li class="f">תיקיות מסודרות, ומה לא מכניסים</li>
+      <li class="f">קובץ ההוראות והזיכרון</li>
+      <li class="f">איך מבקשים מסוכן</li>
+    </ol>
+  </div>
 </section>
 
-<!-- 5 אבטחת מידע -->
+<!-- 5 איך עובדים היום -->
 <section class="slide">
-  <div class="agenda"><span class="ag on">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
-  <h2>אבטחת מידע: <span class="r">מה לא מכניסים</span></h2>
-  <div class="fill">
-    <div class="sec">
-      <div class="card f">
-        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="#AF242A" stroke-width="3"><circle cx="18" cy="15" r="7"/><path d="M5 40c1-8 6-12 13-12s12 4 13 12"/><path d="M33 20h10M33 28h10M33 36h7"/></svg>
-        <p>שמות סטודנטים עם ציונים</p>
-      </div>
-      <div class="card f">
-        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="#AF242A" stroke-width="3"><rect x="5" y="10" width="38" height="28" rx="4"/><circle cx="17" cy="22" r="5"/><path d="M10 33c1-4 4-6 7-6s6 2 7 6M29 19h9M29 26h9"/></svg>
-        <p>מספרי זהות</p>
-      </div>
-      <div class="card f">
-        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="#AF242A" stroke-width="3"><path d="M19 6h10v13h13v10H29v13H19V29H6V19h13z"/></svg>
-        <p>מידע רפואי או אישי</p>
-      </div>
-      <div class="card f">
-        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="#AF242A" stroke-width="3"><rect x="9" y="21" width="30" height="21" rx="4"/><path d="M15 21v-6a9 9 0 0 1 18 0v6M24 29v6"/></svg>
-        <p>סיסמאות</p>
-      </div>
-      <div class="card f">
-        <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="#AF242A" stroke-width="3"><path d="M11 5h18l8 8v30H11z"/><path d="M17 21h14M17 28h14M17 35h8"/><circle cx="35" cy="36" r="7" fill="#FBF1F1"/><path d="M32 36l2 2 4-4"/></svg>
-        <p>מבחנים חסויים</p>
-      </div>
+  <div class="agenda"><span class="ag on">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
+  <h2>איך עובדים היום</h2>
+  <div style="display:flex;gap:30px;align-items:center;flex:1;min-height:0">
+    <div style="flex:1.3">
+      <ul class="dot">
+        <li class="f" style="font-size:24px">בקבוצה גדולה אי אפשר ללוות כל אחד/ת בפרויקט משלו/ה. כל פרויקט הולך לכיוון אחר, וכל אחד/ת נתקע/ת במקום אחר.</li>
+        <li class="f" style="font-size:24px">אז היום: <b>מכירים יכולת, ומיד מתנסים בה</b> כמה דקות. כמו במפגש הקודם.</li>
+        <li class="f" style="font-size:24px">כל הפרומפטים של ההתנסויות מחכים בדף התרגול, להעתקה.</li>
+        <li class="f" style="font-size:24px">נתקעתם/ן? כתבו בצ'אט.</li>
+      </ul>
+    </div>
+    <div class="f" style="flex:0 0 250px;text-align:center">
+      <img src="../deck/assets/qr-guide.png" alt="ברקוד לדף ההנחיות לתרגול" style="width:220px;display:block;margin:0 auto">
+      <p style="font-size:20px;font-weight:700;margin-top:6px">הנחיות לתרגול</p>
+      <div style="margin-top:8px"><button type="button" class="lnk" data-href="#s2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>העתקת הקישור</button></div>
     </div>
   </div>
-  <p class="line-end f" style="font-size:36px">התיקייה ממקדת את העבודה, אבל היא <span class="r">לא כספת.</span></p>
-  <p class="f" style="text-align:center;font-size:24px;color:var(--muted);margin-top:4px">כל מה שקלוד קורא נשלח לאנתרופיק.</p>
+  <p class="line-end f" style="font-size:30px">את הפרויקט שלכם/ן ממשיכים <span class="r">בבית</span>, עם כל מה שלמדנו היום.</p>
 </section>
 
-<!-- 6 איך מבקשים מסוכן -->
+
+<!-- 6 אבטחת מידע -->
 <section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag on">מרעיון לבקשה</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
-  <h2 style="margin-bottom:12px">איך מבקשים מסוכן</h2>
+  <div class="agenda"><span class="ag on">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
+  <h2>אבטחת מידע: מה מכניסים, ומה לא</h2>
+  <div class="sec3">
+    <div class="card redt f">
+      <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="#AF242A" stroke-width="3"><circle cx="18" cy="15" r="7"/><path d="M5 40c1-8 6-12 13-12s12 4 13 12"/><path d="M33 20h10M33 28h10M33 36h7"/></svg>
+      <h4>מידע אישי של אחרים</h4>
+      <p class="verdict" style="color:var(--red)">לא מכניסים</p>
+      <ul class="dot">
+        <li>שמות סטודנטים עם ציונים</li>
+        <li>מספרי זהות</li>
+        <li>מידע רפואי או אישי</li>
+        <li>מבחנים חסויים</li>
+      </ul>
+    </div>
+    <div class="card amb f">
+      <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="#C07F12" stroke-width="3"><rect x="9" y="21" width="30" height="21" rx="4"/><path d="M15 21v-6a9 9 0 0 1 18 0v6M24 29v6"/></svg>
+      <h4>מידע אישי שלכם/ן</h4>
+      <p class="verdict" style="color:#A86A08">הבחירה שלכם/ן</p>
+      <p>מסמכים, כספים, תכתובות. דעו שיש בזה <b>סיכון אבטחה</b>: כל מה שקלוד קורא נשלח לאנתרופיק.</p>
+    </div>
+    <div class="card grt f">
+      <svg class="ico" viewBox="0 0 48 48" fill="none" stroke="#5E9A28" stroke-width="3"><rect x="6" y="16" width="26" height="26" rx="4"/><path d="M13 9h25a4 4 0 0 1 4 4v25"/><path d="M13 27h12M13 34h8"/></svg>
+      <h4>ומצד שני</h4>
+      <p class="verdict" style="color:var(--gd)">הקשר רחב, עבודה יעילה</p>
+      <p>ככל שקלוד מכיר יותר, קבצים, דוגמאות ורקע, כך <b>העבודה מדויקת ויעילה יותר.</b></p>
+    </div>
+  </div>
+  <p class="line-end f" style="font-size:32px;margin-top:18px">התיקייה ממקדת את העבודה, אבל היא <span class="r">לא כספת.</span></p>
+</section>
+
+<!-- 7 איך מומלץ לבקש בקשה מסוכן -->
+<section class="slide">
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag on">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
+  <h2 style="margin-bottom:12px">איך מומלץ לבקש בקשה מסוכן</h2>
   <div class="cards" style="align-items:stretch">
     <div class="card f"><h4>מטרה</h4><p>מה רוצים שיהיה בסוף.</p></div>
     <div class="card f"><h4>הקשר</h4><p>על אילו קבצים, בשביל מי, ובאיזה סגנון.</p></div>
@@ -248,10 +373,11 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
   <p class="f" style="margin-top:6px;font-size:23px">ומתחילים במצב התכנון, ובודקים את התוכנית לפני שמאשרים.</p>
 </section>
 
-<!-- 7 התוכנית כקובץ -->
+
+<!-- 8 מצב Plan: התוכנית כקובץ -->
 <section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag on">מרעיון לבקשה</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
-  <h2 style="font-size:42px;margin-bottom:10px">התוכנית בחלונית הצד, ואיך קוראים אותה בנוחות</h2>
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag on">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
+  <h2 style="font-size:40px;margin-bottom:10px">מצב <span class="en">Plan</span>: התוכנית בחלונית הצד, ואיך קוראים אותה בנוחות</h2>
   <div style="display:flex;gap:30px;align-items:flex-start">
     <ul class="dot" style="flex:1.1">
       <li class="f" style="font-size:22px;margin:6px 0"><b>הבעיה:</b> במצב התכנון התוכנית מופיעה בחלונית בצד, <span class="r">מיושרת לשמאל</span>. בעברית קשה לקרוא אותה.</li>
@@ -273,33 +399,140 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
   </div>
   <p class="illus" style="text-align:left;margin-left:10px">המחשה</p>
   <div class="prompt f" style="margin-top:8px;font-size:21px;line-height:1.5"><span class="lb">הפרומפט</span>כשהתוכנית מוכנה ואאשר לך לצאת ממצב התכנון: לפני כל דבר אחר, כתוב את התוכנית כדף אינטרנט בעברית, מימין לשמאל, ופתח אותו בדפדפן. אחר כך עצור, וחכה שאכתוב לך להתחיל.</div>
-  <p class="f" style="margin-top:10px;font-size:23px">וכדי לא לכתוב את זה בכל פעם: <span class="r">סקיל או הוק.</span> נחזור לזה בסוף.</p>
+  <p class="f" style="margin-top:10px;font-size:23px">וכדי לא לכתוב את זה בכל פעם: <span class="r">סקיל או הוק.</span> מיד אחרי ההתנסות.</p>
 </section>
 
-<!-- 8 איך עובדים היום -->
-<section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag on">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
-  <h2>איך עובדים היום</h2>
-  <div style="display:flex;gap:30px;align-items:center;flex:1;min-height:0">
-    <div style="flex:1.3">
-      <ul class="dot">
-        <li class="f" style="font-size:24px">בקבוצה גדולה אי אפשר ללוות כל אחד/ת בפרויקט משלו/ה. כל פרויקט הולך לכיוון אחר, וכל אחד/ת נתקע/ת במקום אחר.</li>
-        <li class="f" style="font-size:24px">אז היום: <b>מכירים יכולת, ומיד מתנסים בה</b> כמה דקות. כמו במפגש הקודם.</li>
-        <li class="f" style="font-size:24px">כל הפרומפטים של ההתנסויות מחכים בדף התרגול, להעתקה.</li>
-        <li class="f" style="font-size:24px">נתקעתם/ן? כתבו בצ'אט.</li>
-      </ul>
+
+<!-- 9 התנסות: מצב Plan -->
+<section class="slide tight">
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag on">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
+  <p class="kick"><span class="badge">התנסות 1 &middot; 5 דקות</span></p>
+  <h2>מצב <span class="en">Plan</span>, והתוכנית כדף</h2>
+  <div class="hx">
+    <div class="hx-main" style="gap:12px">
+      <div class="prompt f" style="font-size:23px"><b>1.</b> עברו למצב <span class="en">Plan</span>, בשורה שמתחת לתיבה, ובקשו:<br>"תכנן לי סילבוס לקורס שלי בנושא [...], לסמסטר אחד, בקובץ וורד. בינתיים רק תוכנית."</div>
+      <div class="prompt f" style="font-size:23px"><b>2.</b> כשהתוכנית מופיעה בצד, כתבו:<br>"הצג את התוכנית כדף אינטרנט בעברית, מימין לשמאל, ופתח אותו בדפדפן. אחר כך עצור, וחכה שאכתוב לך להתחיל."</div>
+      <p class="f" style="font-size:22px">קלוד יבקש לצאת ממצב התכנון, כי במצב הזה הוא לא יוצר קבצים. <b>מאשרים.</b></p>
+      <p class="f" style="font-size:22px"><span class="okline">הצלחתם/ן אם:</span> התוכנית נפתחה כדף בדפדפן, מימין לשמאל, וקלוד מחכה.</p>
     </div>
-    <div class="f" style="flex:0 0 250px;text-align:center">
-      <img src="../deck/assets/qr-guide.png" alt="ברקוד לדף ההנחיות לתרגול" style="width:220px;display:block;margin:0 auto">
-      <p style="font-size:20px;font-weight:700;margin-top:6px">הנחיות לתרגול</p>
+    <div class="hx-side f">
+      <img src="../deck/assets/qr-guide.png" alt="ברקוד לדף ההנחיות לתרגול">
+      <p>הנחיות לתרגול</p>
+      <button type="button" class="lnk" data-href="#s2-plan"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>העתקת הקישור</button>
+      <div class="tm"><span class="tclock" data-min="5">05:00</span><button type="button" class="tbtn">התחלה</button><p class="tback"></p></div>
     </div>
   </div>
-  <p class="line-end f" style="font-size:30px">את הפרויקט שלכם/ן ממשיכים <span class="r">בבית</span>, עם כל מה שלמדנו היום.</p>
 </section>
 
-<!-- 9 חלון ההקשר -->
+<!-- 10 סקיל -->
 <section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag on">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag on">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
+  <h2>מה שעבד, הופך לסקיל</h2>
+  <ul class="dot">
+    <li class="f" style="font-size:24px"><b>תזכורת:</b> סקיל הוא מתכון שקלוד שומר, ונטען רק כשצריך. ראינו במפגש הקודם.</li>
+    <li class="f" style="font-size:24px"><b>איך יוצרים:</b> אחרי שמשהו עבד, אומרים:</li>
+  </ul>
+  <div class="prompt f" style="margin:6px 0 8px">"תהפוך את מה שעשינו עכשיו לסקיל בשם [שם]. תכלול את השלבים, את הכללים שגילינו בדרך, ומה בודקים בסוף."</div>
+  <ul class="dot">
+    <li class="f" style="font-size:24px"><b>בפעם הבאה:</b> לוכסן ושם הסקיל, או "תפעיל את הסקיל [שם]".</li>
+    <li class="f" style="font-size:24px"><b>ופלאגינים:</b> חבילה מוכנה של סקילים ומחברים, מתוך קטלוג. הפלוס שליד תיבת ההקלדה, ואז
+<span class="path">Add plugins</span>
+    </li>
+  </ul>
+  <p class="line-end f" style="font-size:26px">ומה ההבדל בין סקיל <span class="r">להוק?</span> אחרי ההתנסות.</p>
+</section>
+
+
+<!-- 11 התנסות: סקיל -->
+<section class="slide tight">
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag on">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
+  <p class="kick"><span class="badge">התנסות 2 &middot; 8 דקות</span></p>
+  <h2>בונים סקיל</h2>
+  <div class="hx">
+    <div class="hx-main" style="gap:12px">
+      <div class="prompt f" style="font-size:23px">"צור לי סקיל בשם
+<span class="mono">plan-html</span>
+        שעובד כך: כשאני מבקש תוכנית, חקור בלי לשנות כלום, כתוב את התוכנית כדף אינטרנט בעברית מימין לשמאל, פתח אותו בדפדפן, ועצור עד שאאשר."</div>
+      <p class="f" style="font-size:23px">ואז פותחים <b>שיחה חדשה באותה תיקייה</b>, בלי מצב התכנון, מקלידים לוכסן ואת שם הסקיל, ומבקשים משהו קטן לתכנן.</p>
+      <div class="alt f" style="font-size:20px"><b>חלופה, משוב למטלה:</b> "צור לי סקיל בשם
+<span class="mono">student-feedback</span>
+        שעובד כך: כשאני מדביק תשובה של סטודנט למטלה, כתוב משוב במבנה קבוע: שתי נקודות חוזק, נקודה אחת לשיפור, ומשפט עידוד. בטון חם ומקצועי, עד 80 מילים."</div>
+      <p class="f" style="font-size:22px"><span class="okline">הצלחתם/ן אם:</span> בשיחה החדשה התוכנית נפתחת כדף, וקלוד מחכה לאישור.</p>
+    </div>
+    <div class="hx-side f">
+      <img src="../deck/assets/qr-guide.png" alt="ברקוד לדף ההנחיות לתרגול">
+      <p>הנחיות לתרגול</p>
+      <button type="button" class="lnk" data-href="#s2-skill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>העתקת הקישור</button>
+      <div class="tm"><span class="tclock" data-min="8">08:00</span><button type="button" class="tbtn">התחלה</button><p class="tback"></p></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 12 סקיל או הוק -->
+<section class="slide tight">
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag on">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
+  <h2 style="margin-bottom:10px">סקיל או הוק: מתי מה</h2>
+  <div class="vs">
+    <div class="card grt f">
+      <h4>סקיל = מתכון</h4>
+      <p style="font-size:21px">הוראות שקלוד קורא כשהמשימה מתאימה, או כשמקלידים את שמו. קלוד מחליט ליישם, וכמעט תמיד מיישם. כותבים במילים, ומתקנים במילים.</p>
+      <p style="font-size:21px;margin-top:6px"><b>לנוהל שחוזר על עצמו.</b> למשל:</p>
+      <ul class="dot">
+        <li>משוב למטלה במבנה קבוע</li>
+        <li>סילבוס בפורמט של המחלקה</li>
+        <li>תשובה למייל של סטודנט, בטון שלכם/ן</li>
+      </ul>
+    </div>
+    <div class="card hk redt f">
+      <h4 style="color:var(--red)">הוק = כלל אוטומטי</h4>
+      <p style="font-size:21px">סקריפט קטן שהאפליקציה מריצה בעצמה, ברגע קבוע: כששולחים הודעה, לפני שקלוד מפעיל כלי, או כשהוא מסיים. קורה בכל פעם, בלי לשאול את קלוד.</p>
+      <p style="font-size:21px;margin-top:6px"><b>לכלל שאסור שיישבר.</b> למשל:</p>
+      <ul class="dot">
+        <li>לחסום הודעה שיש בה מספר זהות</li>
+        <li>לעצור ולשאול לפני פעולה שעולה כסף</li>
+        <li>צליל בכל פעם שקלוד מסיים</li>
+      </ul>
+    </div>
+  </div>
+  <p class="line-end f" style="font-size:25px;margin-top:12px">הטיפ של אנתרופיק: כתבתם/ן כלל, הדגשתם/ן אותו, וקלוד עדיין שוכח? <span class="r">זה סימן שהוא צריך להיות הוק.</span></p>
+  <p class="f" style="text-align:center;font-size:21px;margin-top:6px">ואיך יוצרים הוק? מבקשים במילים: "כתוב לי הוק ש...". לפני שמאשרים, מבקשים שיסביר מה ההוק עושה, כי הוא רץ על המחשב שלכם/ן.</p>
+</section>
+
+
+<!-- 13 הסקילים וההוקים שלי -->
+<section class="slide tight">
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag on">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
+  <h2 style="margin-bottom:10px">הסקילים וההוקים שלי</h2>
+  <div class="vs">
+    <div class="card grt f">
+      <h4>הסקילים שלי: נהלים שחוזרים</h4>
+      <ul class="dot">
+        <li>בניית מצגת: מתווה, אישור, ורק אז בנייה. גם המצגת הזו.<span class="fn">presentation-deck</span></li>
+        <li>טיוטת מייל: תמיד טיוטה, בסגנון שלי, ובדיקה של כל תאריך וסכום.<span class="fn">email-draft</span></li>
+        <li>קובץ פי-די-אף בעברית, עם כל הלקחים על כיווניות.<span class="fn">create-pdf</span></li>
+        <li>כתוביות בעברית לסרטון, מההורדה ועד הצריבה.<span class="fn">hebrew-subs</span></li>
+        <li>סגירת סשן: זיכרון, סיכום ושמירה.<span class="fn">wrap-up</span></li>
+      </ul>
+    </div>
+    <div class="card hk redt f">
+      <h4 style="color:var(--red)">ההוקים שלי: קורים בכל פעם</h4>
+      <ul class="dot">
+        <li>שומר הסודות: חוסם הודעה שיש בה סיסמה או מפתח.<span class="fn">secret-guard</span></li>
+        <li>שומר הארנק: לפני יצירה בתשלום של תמונה, וידאו או קול, עוצר ושואל אותי.<span class="fn">paid-api-guard</span></li>
+        <li>צליל כשקלוד מסיים, וכשהוא מחכה לי.<span class="fn">attention-sound</span></li>
+        <li>כל תוכנית נפתחת כדף בכרום, מימין לשמאל.<span class="fn">plan-to-html</span></li>
+        <li>בתחילת כל שיחה, בודק שקבצי ההוראות לא תפחו.<span class="fn">instruction-size-check</span></li>
+      </ul>
+    </div>
+  </div>
+  <p class="line-end f" style="font-size:26px;margin-top:12px">ביקשתי מקלוד 47 פעמים לפתוח דפים בכרום. שורה בזיכרון לא החזיקה. <span class="r">הוק החזיק.</span></p>
+</section>
+
+
+<!-- 14 חלון ההקשר -->
+<section class="slide">
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag on">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
   <h2>חלון ההקשר</h2>
   <div class="two" style="align-items:center">
     <div class="tx">
@@ -322,9 +555,10 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
   <p class="line-end f">שיחה קצרה וממוקדת <span class="r">עובדת טוב יותר</span> משיחה ארוכה.</p>
 </section>
 
-<!-- 10 פקודות סלאש -->
+
+<!-- 15 פקודות סלאש -->
 <section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag on">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag on">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
   <h2>פקודות סלאש</h2>
   <p style="font-size:24px">מקלידים לוכסן בתיבה, או לוחצים על הפלוס ואז
 <span class="path">Slash commands</span>
@@ -342,10 +576,11 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
   <p class="line-end f" style="font-size:26px">לא צריך לזכור. פותחים את הרשימה, <span class="r">וקוראים.</span></p>
 </section>
 
-<!-- 10ב התנסות: פקודות סלאש -->
+
+<!-- 16 התנסות: פקודות סלאש -->
 <section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag on">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
-  <p class="kick"><span class="badge">התנסות &middot; 4 דקות</span></p>
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag on">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
+  <p class="kick"><span class="badge">התנסות 3 &middot; 4 דקות</span></p>
   <h2>פקודות סלאש</h2>
   <div class="hx">
     <div class="hx-main">
@@ -355,14 +590,16 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
     <div class="hx-side f">
       <img src="../deck/assets/qr-guide.png" alt="ברקוד לדף ההנחיות לתרגול">
       <p>הנחיות לתרגול</p>
+      <button type="button" class="lnk" data-href="#s2-slash"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>העתקת הקישור</button>
       <div class="tm"><span class="tclock" data-min="4">04:00</span><button type="button" class="tbtn">התחלה</button><p class="tback"></p></div>
     </div>
   </div>
 </section>
 
-<!-- 11 תמונות וקובץ מסוים -->
+
+<!-- 17 תמונות וקובץ מסוים -->
 <section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag on">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag on">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
   <h2>תמונות, צילומי מסך, וקובץ מסוים</h2>
   <div class="cards big-cards" style="align-items:stretch;flex:1;min-height:0;max-height:400px">
     <div class="card f">
@@ -378,10 +615,11 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
   </div>
 </section>
 
-<!-- 11ב התנסות: תמונות -->
+
+<!-- 18 התנסות: תמונות -->
 <section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag on">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
-  <p class="kick"><span class="badge">התנסות &middot; 4 דקות</span></p>
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag on">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
+  <p class="kick"><span class="badge">התנסות 4 &middot; 4 דקות</span></p>
   <h2>תמונות וקובץ מסוים</h2>
   <div class="hx">
     <div class="hx-main">
@@ -392,14 +630,16 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
     <div class="hx-side f">
       <img src="../deck/assets/qr-guide.png" alt="ברקוד לדף ההנחיות לתרגול">
       <p>הנחיות לתרגול</p>
+      <button type="button" class="lnk" data-href="#s2-images"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>העתקת הקישור</button>
       <div class="tm"><span class="tclock" data-min="4">04:00</span><button type="button" class="tbtn">התחלה</button><p class="tback"></p></div>
     </div>
   </div>
 </section>
 
-<!-- 12 שיחות במקביל -->
+
+<!-- 19 שיחות במקביל -->
 <section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag on">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag on">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
   <h2>כמה שיחות במקביל, והתראות</h2>
   <div class="two" style="align-items:center">
     <div class="tx">
@@ -422,10 +662,11 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
   </div>
 </section>
 
-<!-- 12ב התנסות: שיחות במקביל -->
+
+<!-- 20 התנסות: שיחות במקביל -->
 <section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag on">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
-  <p class="kick"><span class="badge">התנסות &middot; 6 דקות</span></p>
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag on">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
+  <p class="kick"><span class="badge">התנסות 5 &middot; 6 דקות</span></p>
   <h2>שתי שיחות במקביל</h2>
   <div class="hx">
     <div class="hx-main">
@@ -436,14 +677,16 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
     <div class="hx-side f">
       <img src="../deck/assets/qr-guide.png" alt="ברקוד לדף ההנחיות לתרגול">
       <p>הנחיות לתרגול</p>
+      <button type="button" class="lnk" data-href="#s2-parallel"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>העתקת הקישור</button>
       <div class="tm"><span class="tclock" data-min="6">06:00</span><button type="button" class="tbtn">התחלה</button><p class="tback"></p></div>
     </div>
   </div>
 </section>
 
-<!-- 13 מחברים -->
+
+<!-- 21 מחברים -->
 <section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag">בתוך האפליקציה</span><span class="ag on">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag on">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
   <h2>מחברים</h2>
   <div class="two" style="align-items:center">
     <div class="tx">
@@ -467,10 +710,11 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
   <p class="line-end f" style="font-size:27px">מחבר הוא גם <span class="r">הדרך הבטוחה</span>: מתחברים בדף של השירות עצמו, והסיסמה לא עוברת דרך קלוד.</p>
 </section>
 
-<!-- 13ב התנסות: מחברים -->
+
+<!-- 22 התנסות: מחברים -->
 <section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag">בתוך האפליקציה</span><span class="ag on">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
-  <p class="kick"><span class="badge">התנסות &middot; 5 דקות</span></p>
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag on">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
+  <p class="kick"><span class="badge">התנסות 6 &middot; 5 דקות</span></p>
   <h2>מחברים</h2>
   <div class="hx">
     <div class="hx-main">
@@ -481,14 +725,16 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
     <div class="hx-side f">
       <img src="../deck/assets/qr-guide.png" alt="ברקוד לדף ההנחיות לתרגול">
       <p>הנחיות לתרגול</p>
+      <button type="button" class="lnk" data-href="#s2-connectors"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>העתקת הקישור</button>
       <div class="tm"><span class="tclock" data-min="5">05:00</span><button type="button" class="tbtn">התחלה</button><p class="tback"></p></div>
     </div>
   </div>
 </section>
 
-<!-- 14 קבצי אופיס -->
+
+<!-- 23 קבצי אופיס -->
 <section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag">בתוך האפליקציה</span><span class="ag on">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag on">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
   <h2>קבצי אופיס: מהתיקייה, ובתוך הקובץ</h2>
   <div class="cards" style="align-items:stretch">
     <div class="card grt f">
@@ -504,10 +750,11 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
   <div class="warnbox f" style="margin-top:12px">התוספים עובדים רק עם <b>מנוי</b> של מיקרוסופט 365. מי שקנה אופיס פעם אחת, בלי מנוי, לא יוכל להתקין אותם. אבל יצירה ועריכה של קבצים <span class="r">מהתיקייה עובדות אצל כולם.</span></div>
 </section>
 
-<!-- 14ב התנסות: אופיס -->
+
+<!-- 24 התנסות: אופיס -->
 <section class="slide tight">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag">בתוך האפליקציה</span><span class="ag on">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
-  <p class="kick"><span class="badge">התנסות &middot; 7 דקות</span></p>
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag on">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
+  <p class="kick"><span class="badge">התנסות 7 &middot; 7 דקות</span></p>
   <h2>קבצי אופיס</h2>
   <div class="hx">
     <div class="hx-main" style="gap:12px">
@@ -519,14 +766,16 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
     <div class="hx-side f">
       <img src="../deck/assets/qr-guide.png" alt="ברקוד לדף ההנחיות לתרגול">
       <p>הנחיות לתרגול</p>
+      <button type="button" class="lnk" data-href="#s2-office"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>העתקת הקישור</button>
       <div class="tm"><span class="tclock" data-min="7">07:00</span><button type="button" class="tbtn">התחלה</button><p class="tback"></p></div>
     </div>
   </div>
 </section>
 
-<!-- 15 התוסף לכרום -->
+
+<!-- 25 התוסף לכרום -->
 <section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag">בתוך האפליקציה</span><span class="ag on">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag on">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
   <h2>התוסף לכרום</h2>
   <div class="two" style="align-items:center">
     <div class="tx">
@@ -560,10 +809,11 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
   <p class="f" style="text-align:center;font-size:23px">מאשרים כל שליחה, ולא נותנים לו לגלוש במערכות עם מידע על סטודנטים.</p>
 </section>
 
-<!-- 15ב התנסות: כרום -->
+
+<!-- 26 התנסות: כרום -->
 <section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag">בתוך האפליקציה</span><span class="ag on">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
-  <p class="kick"><span class="badge">התנסות &middot; 6 דקות, כולל התקנה</span></p>
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag on">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
+  <p class="kick"><span class="badge">התנסות 8 &middot; 6 דקות, כולל התקנה</span></p>
   <h2>התוסף לכרום</h2>
   <div class="hx">
     <div class="hx-main">
@@ -574,14 +824,16 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
     <div class="hx-side f">
       <img src="../deck/assets/qr-guide.png" alt="ברקוד לדף ההנחיות לתרגול">
       <p>הנחיות לתרגול</p>
+      <button type="button" class="lnk" data-href="#s2-chrome"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>העתקת הקישור</button>
       <div class="tm"><span class="tclock" data-min="6">06:00</span><button type="button" class="tbtn">התחלה</button><p class="tback"></p></div>
     </div>
   </div>
 </section>
 
-<!-- 16 ממשיכים מהטלפון -->
+
+<!-- 27 ממשיכים מהטלפון -->
 <section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag">בתוך האפליקציה</span><span class="ag on">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag on">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
   <h2>ממשיכים מהטלפון</h2>
   <div class="two" style="align-items:center">
     <div class="tx">
@@ -609,10 +861,11 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
   </div>
 </section>
 
-<!-- 16ב התנסות: שליטה מרחוק -->
+
+<!-- 28 התנסות: שליטה מרחוק -->
 <section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag">בתוך האפליקציה</span><span class="ag on">מחוץ לאפליקציה</span><span class="ag">סקילים וסיום</span></div>
-  <p class="kick"><span class="badge">התנסות &middot; 4 דקות, כולל התקנה בטלפון</span></p>
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag on">מחוץ לאפליקציה</span><span class="ag">שאלות וסיום</span></div>
+  <p class="kick"><span class="badge">התנסות 9 &middot; 4 דקות, כולל התקנה בטלפון</span></p>
   <h2>ממשיכים מהטלפון</h2>
   <div class="hx">
     <div class="hx-main">
@@ -622,115 +875,16 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
     <div class="hx-side f">
       <img src="../deck/assets/qr-guide.png" alt="ברקוד לדף ההנחיות לתרגול">
       <p>הנחיות לתרגול</p>
+      <button type="button" class="lnk" data-href="#s2-phone"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>העתקת הקישור</button>
       <div class="tm"><span class="tclock" data-min="4">04:00</span><button type="button" class="tbtn">התחלה</button><p class="tback"></p></div>
     </div>
   </div>
 </section>
 
-<!-- 17 סקיל -->
+
+<!-- 29 עוד שני דברים -->
 <section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag on">סקילים וסיום</span></div>
-  <h2>מה שעבד, הופך לסקיל</h2>
-  <ul class="dot">
-    <li class="f" style="font-size:24px"><b>תזכורת:</b> סקיל הוא מתכון שקלוד שומר, ונטען רק כשצריך. ראינו במפגש הקודם.</li>
-    <li class="f" style="font-size:24px"><b>איך יוצרים:</b> אחרי שמשהו עבד, אומרים:</li>
-  </ul>
-  <div class="prompt f" style="margin:6px 0 8px">"תהפוך את מה שעשינו עכשיו לסקיל בשם [שם]. תכלול את השלבים, את הכללים שגילינו בדרך, ומה בודקים בסוף."</div>
-  <ul class="dot">
-    <li class="f" style="font-size:24px"><b>בפעם הבאה:</b> לוכסן ושם הסקיל, או "תפעיל את הסקיל [שם]".</li>
-    <li class="f" style="font-size:24px"><b>ופלאגינים:</b> חבילה מוכנה של סקילים ומחברים, מתוך קטלוג. הפלוס שליד תיבת ההקלדה, ואז
-<span class="path">Add plugins</span>
-    </li>
-  </ul>
-  <p class="line-end f" style="font-size:26px">ומה ההבדל בין סקיל <span class="r">להוק?</span> אחרי ההתנסות.</p>
-</section>
-
-<!-- 17ב התנסות: סקיל -->
-<section class="slide tight">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag on">סקילים וסיום</span></div>
-  <p class="kick"><span class="badge">התנסות &middot; 8 דקות</span></p>
-  <h2>בונים סקיל</h2>
-  <div class="hx">
-    <div class="hx-main" style="gap:12px">
-      <div class="prompt f" style="font-size:23px">"צור לי סקיל בשם
-<span class="mono">student-feedback</span>
-        שעובד כך: כשאני מדביק תשובה של סטודנט למטלה, כתוב משוב במבנה קבוע: שתי נקודות חוזק, נקודה אחת לשיפור, ומשפט עידוד. בטון חם ומקצועי, עד 80 מילים."</div>
-      <p class="f" style="font-size:23px">ואז פותחים <b>שיחה חדשה</b>, מקלידים לוכסן ואת שם הסקיל, ומדביקים תשובה מומצאת של סטודנט.</p>
-      <div class="alt f" style="font-size:20px"><b>חלופה, הסקיל של התוכנית:</b> "צור לי סקיל בשם
-<span class="mono">plan-html</span>
-        שעובד כך: כשאני מבקש תוכנית, חקור בלי לשנות כלום, כתוב את התוכנית כדף אינטרנט בעברית מימין לשמאל, פתח אותו בדפדפן, ועצור עד שאאשר."</div>
-      <p class="f" style="font-size:22px"><span class="okline">הצלחתם/ן אם:</span> בשיחה החדשה המשוב יוצא במבנה שהגדרתם/ן.</p>
-    </div>
-    <div class="hx-side f">
-      <img src="../deck/assets/qr-guide.png" alt="ברקוד לדף ההנחיות לתרגול">
-      <p>הנחיות לתרגול</p>
-      <div class="tm"><span class="tclock" data-min="8">08:00</span><button type="button" class="tbtn">התחלה</button><p class="tback"></p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 18 סקיל או הוק -->
-<section class="slide tight">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag on">סקילים וסיום</span></div>
-  <h2 style="margin-bottom:10px">סקיל או הוק: מתי מה</h2>
-  <div class="vs">
-    <div class="card grt f">
-      <h4>סקיל = מתכון</h4>
-      <p style="font-size:21px">הוראות שקלוד קורא כשהמשימה מתאימה, או כשמקלידים את שמו. קלוד מחליט ליישם, וכמעט תמיד מיישם. כותבים במילים, ומתקנים במילים.</p>
-      <p style="font-size:21px;margin-top:6px"><b>לנוהל שחוזר על עצמו.</b> למשל:</p>
-      <ul class="dot">
-        <li>משוב למטלה במבנה קבוע</li>
-        <li>סילבוס בפורמט של המחלקה</li>
-        <li>תשובה למייל של סטודנט, בטון שלכם/ן</li>
-      </ul>
-    </div>
-    <div class="card hk redt f">
-      <h4 style="color:var(--red)">הוק = כלל אוטומטי</h4>
-      <p style="font-size:21px">סקריפט קטן שהאפליקציה מריצה בעצמה, ברגע קבוע: כששולחים הודעה, לפני שקלוד מפעיל כלי, או כשהוא מסיים. קורה בכל פעם, בלי לשאול את קלוד.</p>
-      <p style="font-size:21px;margin-top:6px"><b>לכלל שאסור שיישבר.</b> למשל:</p>
-      <ul class="dot">
-        <li>לחסום הודעה שיש בה מספר זהות</li>
-        <li>לעצור ולשאול לפני פעולה שעולה כסף</li>
-        <li>צליל בכל פעם שקלוד מסיים</li>
-      </ul>
-    </div>
-  </div>
-  <p class="line-end f" style="font-size:25px;margin-top:12px">הטיפ של אנתרופיק: כתבתם/ן כלל, הדגשתם/ן אותו, וקלוד עדיין שוכח? <span class="r">זה סימן שהוא צריך להיות הוק.</span></p>
-  <p class="f" style="text-align:center;font-size:21px;margin-top:6px">ואיך יוצרים הוק? מבקשים במילים: "כתוב לי הוק ש...". לפני שמאשרים, מבקשים שיסביר מה ההוק עושה, כי הוא רץ על המחשב שלכם/ן.</p>
-</section>
-
-<!-- 19 הסקילים וההוקים שלי -->
-<section class="slide tight">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag on">סקילים וסיום</span></div>
-  <h2 style="margin-bottom:10px">הסקילים וההוקים שלי</h2>
-  <div class="vs">
-    <div class="card grt f">
-      <h4>הסקילים שלי: נהלים שחוזרים</h4>
-      <ul class="dot">
-        <li>בניית מצגת: מתווה, אישור, ורק אז בנייה. גם המצגת הזו.<span class="fn">presentation-deck</span></li>
-        <li>טיוטת מייל: תמיד טיוטה, בסגנון שלי, ובדיקה של כל תאריך וסכום.<span class="fn">email-draft</span></li>
-        <li>קובץ פי-די-אף בעברית, עם כל הלקחים על כיווניות.<span class="fn">create-pdf</span></li>
-        <li>כתוביות בעברית לסרטון, מההורדה ועד הצריבה.<span class="fn">hebrew-subs</span></li>
-        <li>סגירת סשן: זיכרון, סיכום ושמירה.<span class="fn">wrap-up</span></li>
-      </ul>
-    </div>
-    <div class="card hk redt f">
-      <h4 style="color:var(--red)">ההוקים שלי: קורים בכל פעם</h4>
-      <ul class="dot">
-        <li>שומר הסודות: חוסם הודעה שיש בה סיסמה או מפתח.<span class="fn">secret-guard</span></li>
-        <li>שומר הארנק: לפני יצירה בתשלום של תמונה, וידאו או קול, עוצר ושואל אותי.<span class="fn">paid-api-guard</span></li>
-        <li>צליל כשקלוד מסיים, וכשהוא מחכה לי.<span class="fn">attention-sound</span></li>
-        <li>כל תוכנית נפתחת כדף בכרום, מימין לשמאל.<span class="fn">plan-to-html</span></li>
-        <li>בתחילת כל שיחה, בודק שקבצי ההוראות לא תפחו.<span class="fn">instruction-size-check</span></li>
-      </ul>
-    </div>
-  </div>
-  <p class="line-end f" style="font-size:26px;margin-top:12px">ביקשתי מקלוד 47 פעמים לפתוח דפים בכרום. שורה בזיכרון לא החזיקה. <span class="r">הוק החזיק.</span></p>
-</section>
-
-<!-- 20 עוד שני דברים -->
-<section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag on">סקילים וסיום</span></div>
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag on">שאלות וסיום</span></div>
   <h2>עוד שני דברים שקלוד קוד יודע</h2>
   <div class="cards big-cards" style="align-items:stretch;flex:1;min-height:0;max-height:380px">
     <div class="card f">
@@ -746,16 +900,18 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
   </div>
 </section>
 
-<!-- 21 שאלות -->
+
+<!-- 30 שאלות -->
 <section class="slide mid">
   <h2 style="font-size:58px">שאלות, ומה לוקחים מכאן</h2>
   <div class="prompt f" style="font-size:34px;margin-top:20px;text-align:center;border-right-color:var(--red)">כתבו בצ'אט: <b>הדבר האחד מהיום</b> שתנסו כבר השבוע.</div>
   <p class="f" style="font-size:30px;margin-top:30px">ואז, שאלות פתוחות.</p>
 </section>
 
-<!-- 22 איך ממשיכים לבד -->
+
+<!-- 31 איך ממשיכים לבד -->
 <section class="slide">
-  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">מרעיון לבקשה</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag on">סקילים וסיום</span></div>
+  <div class="agenda"><span class="ag">פתיחה וחזרה</span><span class="ag">בקשה, תוכנית וסקיל</span><span class="ag">בתוך האפליקציה</span><span class="ag">מחוץ לאפליקציה</span><span class="ag on">שאלות וסיום</span></div>
   <h2>איך ממשיכים לבד</h2>
   <div style="display:flex;gap:30px;align-items:center;flex:1;min-height:0">
     <div style="flex:1">
@@ -770,11 +926,13 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
     <div class="f" style="flex:0 0 240px;text-align:center">
       <img src="../deck/assets/qr-guide.png" alt="ברקוד לדף ההנחיות לתרגול" style="width:220px;display:block;margin:0 auto">
       <p style="font-size:20px;font-weight:700;margin-top:6px">הנחיות לתרגול</p>
+      <div style="margin-top:8px"><button type="button" class="lnk" data-href="#s2tips"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><path d="M10 14a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 10a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>העתקת הקישור</button></div>
     </div>
   </div>
 </section>
 
-<!-- 23 תודה -->
+
+<!-- 32 תודה -->
 <section class="slide">
   <div class="two" style="gap:60px">
     <div class="tx" style="text-align:center">
@@ -793,6 +951,11 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
 <span class="en">F</span>
 </div>
 
+<div id="lnkToast" role="status" aria-live="polite">
+  <p class="msg"></p>
+  <input type="text" readonly aria-label="הקישור לדף התרגול">
+  <div class="row"><a href="#" target="_blank" rel="noopener">פתיחה בלשונית חדשה</a><button type="button" class="x">סגירה</button></div>
+</div>
 <script>
 (function(){
   const deck=document.getElementById('deck'), slides=[...deck.querySelectorAll('.slide')];
@@ -846,6 +1009,25 @@ html,body{height:100%;background:#2E2D2A;overflow:hidden;font-family:'Heebo',Ari
       }, 250);
     });
   });
+
+  // copy-link buttons: copy the practice-page link for this exact exercise, for the Zoom chat
+  const GUIDE='https://tomhagiladi.github.io/openu-claude-code-3-11-26/guide/';
+  const toast=document.getElementById('lnkToast'), tMsg=toast.querySelector('.msg'), tIn=toast.querySelector('input'), tOpen=toast.querySelector('a');
+  let tHide=null;
+  function hideToast(){ toast.classList.remove('on'); }
+  deck.querySelectorAll('.lnk').forEach(b=>{
+    b.addEventListener('click', e=>{
+      e.stopPropagation();
+      const url=GUIDE+(b.dataset.href||'');
+      tIn.value=url; tOpen.href=url;
+      const ok=()=>{ tMsg.textContent="הקישור הועתק. אפשר להדביק בצ'אט של הזום."; };
+      const fail=()=>{ tMsg.textContent="סמנו את הקישור והעתיקו:"; tIn.focus(); tIn.select(); };
+      if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(url).then(ok, fail); } else { fail(); }
+      toast.classList.add('on'); clearTimeout(tHide); tHide=setTimeout(hideToast, 10000);
+      b.blur();
+    });
+  });
+  toast.querySelector('.x').addEventListener('click', hideToast);
 })();
 </script>
 </body>
